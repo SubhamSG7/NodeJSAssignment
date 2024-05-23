@@ -1,0 +1,56 @@
+
+What is JavaScript?
+
+--   JavaScript is a high-level, interpreted programming language that
+is one of the core technologies of the World Wide Web, alongside HTML
+and CSS. It is widely used to create interactive effects within web browsers,
+allowing for dynamic content, control of multimedia, and animation. Initially designed
+for client-side scripting, JavaScript is now also used for server-side programming through 
+environments like Node.js.
+
+How to Use JavaScript:
+1.Including JavaScript in HTML:
+
+<html>
+<body>
+  <h1>Hello, World!</h1>
+  <button onclick="alert('Button clicked!')">Click Me</button>
+</body>
+</html>
+
+2.Internal JavaScript:
+
+<html>
+<head>
+  <script>
+    function showMessage() {
+      alert('Hello, World!');
+    }
+  </script>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <button onclick="showMessage()">Click Me</button>
+</body>
+</html>
+
+3.External JavaScript:
+
+Create a file named script.js:
+
+function showMessage() {
+  alert('Hello, World!');
+}
+
+Include it in your HTML file:
+
+<html>
+<head>
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <button onclick="showMessage()">Click Me</button>
+</body>
+</html>
+

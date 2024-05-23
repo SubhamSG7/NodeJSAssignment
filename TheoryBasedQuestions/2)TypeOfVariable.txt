@@ -1,0 +1,60 @@
+2. How many type of Variable in JavaScript? 
+--  In JavaScript, variables can be declared using three different keywords: var, let, 
+and const. These keywords define the scope and behavior of the variables in different ways.
+
+1. Var:
+Scope: Function-scoped.
+
+Hoisting: Variables declared with var are hoisted to the top of their containing function 
+or global context,meaning they can be accessed before their declaration but will be undefined 
+until the declaration is encountered.
+
+Reassignment: Variables declared with var can be reassigned.
+
+Redeclaration: Variables declared with var can be redeclared within the same scope.
+
+code:
+console.log(x);  // undefined ---- Hoisting
+var x = 10;        
+if (true) {
+  var x = 20;
+  console.log(x); // 20
+}
+console.log(x); // 20
+
+2.let:
+Scope: Block-scoped.
+
+Hoisting: Variables declared with `let` are hoisted but are not 
+initialized until their definition is evaluated(Temporal Dead Zone), 
+meaning they cannot be accessed before their declaration.
+
+Reassignment: Variables declared with `let` can be reassigned.
+
+Redeclaration: Variables declared with `let` cannot be redeclared within the same scope.
+
+code:
+let y = 10;
+if (true) {
+  let y = 20;
+  console.log(y); // 20
+}
+console.log(y); // 10
+
+3 Const:
+Scope: Block-scoped.
+Hoisting: 
+Variables declared with 'const' are hoisted but are not initialized until their definition is evaluated (Temporal Dead Zone), 
+meaning they cannot be accessed before their declaration.
+
+Reassignment: Variables declared with 'const' cannot be reassigned after their initial assignment.
+
+Redeclaration: Variables declared with 'const' cannot be redeclared within the same scope.
+
+Code:
+const z = 10;
+if (true) {
+  const z = 20;
+  console.log(z); // 20
+}
+console.log(z); // 10
