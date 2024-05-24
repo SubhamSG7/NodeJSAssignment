@@ -1,0 +1,16 @@
+20. What is the difference btw && and || in js?
+---
+Logical AND (&&)
+The logical AND (&&) operator evaluates expressions from left to right and returns the 
+first falsy value it encounters. If all values are truthy, it returns the last value.
+
+console.log(true && 1 && "hello"); // Output: "hello"
+console.log(true && 0 && "hello"); // Output: 0   in this scenario 0 is falsy value 
+
+Logical OR (||)
+The logical OR (||) operator evaluates expressions from left to right and returns the 
+first truthy value it encounters. If all values are falsy, it returns the last value.
+
+console.log(false || 0 || ""); // Output: ""
+console.log(false || "hello" || 0); // Output: "hello"
+

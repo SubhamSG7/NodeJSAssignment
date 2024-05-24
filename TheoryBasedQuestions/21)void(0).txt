@@ -1,0 +1,10 @@
+21. what is the use of void(0) in js?
+--
+In JavaScript, void(0) is often used to create a link or event handler 
+that does nothing when executed. The void operator evaluates the given expression 
+and returns undefined. The most common usage of void(0) is to create an empty link 
+or prevent the default action of an event handler.
+
+example:
+<a href="javascript:void(0);">Click me</a>
+<button onclick="void(0);">Do nothing</button>   // using event handler

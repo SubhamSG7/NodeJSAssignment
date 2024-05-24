@@ -1,0 +1,11 @@
+19. what is the use of nan function?
+---
+In JavaScript, NaN stands for "Not-a-Number." It is a special value representing an 
+invalid number result, typically arising from mathematical operations that don't produce 
+a valid number. It is not a function, but a property of the global Number object.
+
+let result = 0 / 0; // NaN
+console.log(result); // Output: NaN
+
+let result2 = Math.sqrt(-1); // NaN
+console.log(result2); // Output: NaN
