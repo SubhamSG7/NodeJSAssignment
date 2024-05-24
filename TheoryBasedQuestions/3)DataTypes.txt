@@ -1,0 +1,10 @@
+3. Define a Datatype in JS?
+---
+
+In JavaScript, a data type is a classification that specifies 
+the type of value a variable can hold. JavaScript is a dynamically typed language,
+meaning variables can hold any type of value without having to declare their type explicitly.
+
+JavaScript has seven primitive data types and one non-primitive (object) data type:
+primitive: Number,String,Boolean,undefined,null,symbol,bigInt.
+non-primitive:object.

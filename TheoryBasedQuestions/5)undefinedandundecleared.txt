@@ -1,0 +1,10 @@
+5.What the deference between undefined and undeclare in JavaScript?
+
+--Undefined
+A variable is said to be undefined if it has been declared but not assigned a value. 
+This means that the variable exists in the current scope but hasn't been initialized 
+with any value yet.
+
+Undeclared
+A variable is undeclared if it has not been declared in the current scope using var, 
+let, or const. Attempting to access an undeclared variable will result in a ReferenceError.
