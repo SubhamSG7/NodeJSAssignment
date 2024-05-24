@@ -1,0 +1,30 @@
+47 .What is the drawback of declaring methods directly in JavaScript objects? 
+--
+1. Memory Usage
+When you declare methods directly in an object, each instance of that object has its own copy of the method. 
+This can lead to increased memory usage, especially when creating multiple instances of the object.
+
+code:
+function Person(name) {
+    return {
+        name: name,
+        greet: function() {
+            console.log(`Hello, my name is ${this.name}`);
+        }
+    };
+}
+
+let person1 = Person('Alice');
+let person2 = Person('Bob');
+
+2. Performance
+Because each object instance has its own copy of the method, the JavaScript engine needs 
+to allocate additional memory for each instance. This can result in slower performance, 
+especially if many instances are created.
+
+3. Inheritance and Prototype Chain
+
+Declaring methods directly in the object makes it more challenging to use prototypal 
+inheritance. JavaScript's prototypal inheritance is designed to allow objects to share 
+methods through their prototype chain, which is more memory-efficient and aligns with 
+how JavaScript is intended to handle object-oriented programming.
