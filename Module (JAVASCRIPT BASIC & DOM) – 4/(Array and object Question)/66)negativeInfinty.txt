@@ -1,0 +1,17 @@
+Q. What is -Infinity in js?
+----
+In JavaScript, -Infinity (negative infinity) is a special numeric value that represents 
+a value that is smaller than any other number. It is used to represent values that are 
+considered infinitely small or negative infinity. Here's an example of how you might 
+encounter -Infinity:
+
+example--
+let x = -Infinity;
+console.log(x); // Output: -Infinity
+console.log(x < 0); // Output: true
+console.log(x > -1000); // Output: false (because -Infinity is smaller than any other number)
+
+
+What is === operator?
+--- triple equal operator used to check the datas are equal or not as well as the
+data-types are equal or not
