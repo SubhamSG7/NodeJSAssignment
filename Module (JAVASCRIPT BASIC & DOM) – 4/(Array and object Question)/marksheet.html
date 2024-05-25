@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Calculator</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+    <div class="container">
+        <h1>Marks Calculator</h1>
+        <form id="marksForm">
+            <div class="form-group">
+                <label for="c">C Language:</label>
+                <input type="number" id="c" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="cpp">C++:</label>
+                <input type="number" id="cpp" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="database">Database:</label>
+                <input type="number" id="database" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="corejava">Core Java:</label>
+                <input type="number" id="corejava" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="reactjs">ReactJS:</label>
+                <input type="number" id="reactjs" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="nodejs">NodeJS:</label>
+                <input type="number" id="nodejs" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="javascript">JavaScript:</label>
+                <input type="number" id="javascript" max="50" required>
+            </div>
+            <button type="button" onclick="calculateResults()">Calculate</button>
+        </form>
+        <div class="results">
+            <p id="totalMarks">Total Marks: </p>
+            <p id="percentage">Percentage: </p>
+        </div>
+    </div>
+    <script>
+        function calculateResults() {
+            const c = parseInt(document.getElementById('c').value) || 0;
+            const cpp = parseInt(document.getElementById('cpp').value) || 0;
+            const database = parseInt(document.getElementById('database').value) || 0;
+            const corejava = parseInt(document.getElementById('corejava').value) || 0;
+            const reactjs = parseInt(document.getElementById('reactjs').value) || 0;
+            const nodejs = parseInt(document.getElementById('nodejs').value) || 0;
+            const javascript = parseInt(document.getElementById('javascript').value) || 0;
+
+            const totalMarks = c + cpp + database + corejava + reactjs + nodejs + javascript;
+            const percentage = (totalMarks / 350) * 100;
+
+            document.getElementById('totalMarks').textContent = `Total Marks: ${totalMarks}`;
+            document.getElementById('percentage').textContent = `Percentage: ${percentage.toFixed(2)}%`;
+        }
+
+    </script>
+</body>
+
+</html>

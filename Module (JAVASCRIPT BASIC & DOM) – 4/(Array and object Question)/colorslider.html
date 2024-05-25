@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Card Slider</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            width: 320px;
+            /* Adjusted to match slide width + margins */
+        }
+
+        .slider-container {
+            overflow: hidden;
+            width: 300px;
+            /* Adjusted to match slide width */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide {
+            min-width: 300px;
+            /* Slide width */
+            height: 200px;
+            border-radius: 10px;
+            margin: 0 5px;
+            /* Margins adjusted for smooth sliding */
+        }
+
+        .nav-btn {
+            background-color: #fff;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .nav-btn:focus {
+            outline: none;
+        }
+    </style>
+    <div class="container">
+        <button id="prev" class="nav-btn">❮</button>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide" style="background-color: red;"></div>
+                <div class="slide" style="background-color: orange;"></div>
+                <div class="slide" style="background-color: yellow;"></div>
+                <div class="slide" style="background-color: green;"></div>
+                <div class="slide" style="background-color: blue;"></div>
+                <div class="slide" style="background-color: indigo;"></div>
+                <div class="slide" style="background-color: violet;"></div>
+            </div>
+        </div>
+        <button id="next" class="nav-btn">❯</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            let currentIndex = 0;
+
+            const updateSliderPosition = () => {
+                const offset = -currentIndex * (300 + 10); // 300px for slide width + 10px for margin (5px each side)
+                slider.style.transform = `translateX(${offset}px)`;
+            };
+
+            prevButton.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSliderPosition();
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentIndex < slides.length - 1) {
+                    currentIndex++;
+                    updateSliderPosition();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
