@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><span id="nameError"></span><br><br>
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><span id="emailError"></span><br><br>
+      
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><span id="passwordError"></span><br><br>
+      
+        <button type="submit">Submit</button>
+      </form>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('myForm');
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+
+  nameInput.addEventListener('input', validateName);
+  emailInput.addEventListener('input', validateEmail);
+  passwordInput.addEventListener('input', validatePassword);
+
+  function validateName() {
+    let name = nameInput.value.trim();
+    let nameError = document.getElementById('nameError');
+    if (name === '') {
+      nameError.textContent = 'Name is required';
+    } else {
+      nameError.textContent = '';
+    }
+  }
+
+  function validateEmail() {
+    let email = emailInput.value.trim();
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailError = document.getElementById('emailError');
+    if (!emailRegex.test(email)) {
+      emailError.textContent = 'Please enter a valid email address';
+    } else {
+      emailError.textContent = '';
+    }
+  }
+
+  function validatePassword() {
+    let password = passwordInput.value;
+    let passwordError = document.getElementById('passwordError');
+    if (password.length < 6) {
+      passwordError.textContent = 'Password must be at least 6 characters long';
+    } else {
+      passwordError.textContent = '';
+    }
+  }
+
+  form.addEventListener('submit', function(event) {
+    if (!validateName() || !validateEmail() || !validatePassword()) {
+      event.preventDefault();
+    }
+  });
+});
+
+        </script>      
+</body>
+</html>

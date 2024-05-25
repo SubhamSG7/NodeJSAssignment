@@ -1,2 +1,2 @@
 let arr=[2];
-console.log(Array.isArray(arr));
+console.log(Array.isArray(arr)); //

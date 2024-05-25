@@ -1,3 +1,5 @@
+
+
 function checkday(dayNumber){
     let day;
     switch(dayNumber){

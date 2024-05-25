@@ -1,0 +1,36 @@
+Q59. What is Array vs Object defences in JS?
+----
+In JavaScript, arrays and objects are both used to store data, 
+but they have different purposes and characteristics
+
+1.Arrays:
+Arrays are ordered collections of values, indexed by integers (starting from 0).
+They are useful for storing a list of items of the same type, such as numbers or strings.
+You can easily add, remove, and access elements in an array using index notation (array[index]).
+Arrays have built-in methods for manipulating and iterating over their elements, such as push, 
+pop, forEach, etc.
+
+Example Code:
+var fruits = ['apple', 'banana', 'orange'];
+console.log(fruits[0]); // Output: 'apple'
+fruits.push('grape'); // Add 'grape' to the end of the array
+
+2.Objects:
+
+Objects are collections of key-value pairs, where each key is a string (or Symbol) and each 
+value is any JavaScript value.They are useful for storing structured data, such as 
+information about a person (name, age, etc.), or for representing,
+complex data structures.You can access values in an object using dot notation (object.key) or 
+bracket notation (object['key']).Objects can have methods, which are functions stored as 
+object properties.
+
+Example Code:
+var person = {
+  name: 'John',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+};
+console.log(person.name); // Output: 'John'
